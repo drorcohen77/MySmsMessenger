@@ -10,7 +10,6 @@ import { MessageService } from 'src/app/services/message.service';
 })
 export class MessagesComponent implements OnInit{
 
-  // messages: Message[] = [];
   messages$: Observable<Message[]> = this.taskService.messages;
   messageNum: number = 0;
   

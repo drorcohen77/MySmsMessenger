@@ -12,13 +12,6 @@ CORS(app)
 mongo.init_app(app, tlsCAFile=certifi.where())
 
 
-messages = [
-  {'id': 1, 'phoneNumber': '888-999-999', 'message': 'hello', 'time': '01/01/2020', 'charNum': '20/100'},
-  {'id': 2, 'phoneNumber': '111-888-999', 'message': 'world', 'time': '04/04/2020', 'charNum': '90/100'},
-  {'id': 3, 'phoneNumber': '222-333-666', 'message': 'python', 'time': '05/05/2020', 'charNum': '50/100'},
-]
-
-
 @app.route('/messages', methods=['GET'])
 def get_messages():
     messages_collection = mongo.db.mySMSmessanger
