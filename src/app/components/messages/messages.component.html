@@ -1,0 +1,16 @@
+<div class="message_managment right">
+    <app-add-message (onNewMessage)="newMessage($event)">
+
+    </app-add-message>
+</div>
+
+<div class="message_managment left">
+    <h3 class="m_h_title">Message History ({{(messages$ | async)?.length}})</h3>
+    <div class="message_list">
+        <app-message-history 
+            *ngFor="let message of messages$ | async" 
+            [message]="message"
+            >
+        </app-message-history>
+    </div>
+</div>

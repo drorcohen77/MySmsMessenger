@@ -1,0 +1,18 @@
+<h3>New Message</h3>
+<div class="form">
+    <form class="add-form" (ngSubmit)="onSubmit()">
+        <div class="form-control">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="phoneNumber" name="phoneNumber" id="phoneNumber" [(ngModel)]="phoneNumber" placeholder="Add Phone Number" />
+        </div>
+        <div class="form-control">
+            <label for="Message">Message</label>
+            <textarea type="message" name="message" maxlength="100" id="message" rows="3" [(ngModel)]="message" placeholder=""></textarea>
+            <span class="count_char">{{message.length}}/100</span>
+        </div>
+        <div class="buttons">
+            <span class='link' (click)="clear()">clear</span>
+            <input type="submit" value="Submit" class="btn btn-dark" />
+        </div>
+    </form>
+</div>

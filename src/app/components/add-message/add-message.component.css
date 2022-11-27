@@ -1,0 +1,23 @@
+.form {
+    width: 350px;
+}
+
+.add-form {
+    margin-bottom: 40px;
+}
+
+.buttons {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+span.link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+    padding-top: 10px;
+}
+
+

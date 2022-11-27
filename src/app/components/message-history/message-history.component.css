@@ -1,0 +1,36 @@
+.message {
+    padding: 10px 20px;
+    width: 320px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 10px 5px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.message span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.phone_time {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.phone {
+    font-weight: 600;
+}
+
+.all_messages {
+    margin: 0px 20px 32px 20px;
+}
+
+.time {
+    font-weight: 100px;
+    font-size: small;
+}
+
