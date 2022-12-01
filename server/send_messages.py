@@ -1,9 +1,9 @@
-
 import os
 from twilio.rest import Client
+from dotenv import load_dotenv
 
-# TWILIO_ACCOUNT_SID = 'AC7c9106a71b388ce0e306dfe6f38d1557'
-# TWILIO_AUTH_TOKEN = '5f4bfa3de71070bb9416582ddafd1342'
+
+load_dotenv('.env')
 
 
 def send_message(destination: str, message: str):

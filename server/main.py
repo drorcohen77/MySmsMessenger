@@ -1,17 +1,22 @@
 from flask import Flask, request, jsonify, Response, request
 from flask_cors import CORS
 import json
-import pymongo
-import send_messages
 import certifi
 from flask_pymongo import PyMongo
+import os
+from dotenv import load_dotenv
+import send_messages
+import pymongo
 
+
+load_dotenv('.env')
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb+srv://dror:Almog20haifa!@cluster0.vk6vnph.mongodb.net/SMSDB?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = os.environ.get("MONGO_URI")
 mongo = PyMongo()
 mongo.init_app(app, tlsCAFile=certifi.where())
 
 CORS(app)
+
 
 ### when using comase app locally
 # try:
@@ -42,7 +47,7 @@ def add_message():
     data = request.json
     destination = destination_fixer(data['phoneNumber'])
     message = data['message']
-    # send_messages.send_message(destination, message)
+    send_messages.send_message(destination, message)
 
     try:
         messages_list = mongo.db.mySMSmessanger
